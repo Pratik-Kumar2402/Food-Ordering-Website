@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f2f2f2;
+  }
+  
+  .grid {
+    display: flex;
+  }
+  
+  .cards {
+    width: 60%;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card1 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  .card1-button {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .card1-button:hover, .active, .selected-meals-list button:hover, .card2 button:hover {
+    background-color: #555;
+  }
+  
+  .card2 {
+    padding: 20px;
+  }
+
+  .card2 button{
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .card2-div {
+    display: inline-flex;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .card2-image {
+    max-width: 90%;
+    height: auto;
+    border-radius: 15px;
+  }
+  
+  .card2-details {
+    padding: 10px;
+    width: 130%;
+    line-height: 1.6;
+  }
+  
+  .selected-price {
+    border: 1px solid #ccc;
+    width: 40%;
+    margin: 20px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  .selected-heading{
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    background-color: #333;
+    padding: 10px 25px;
+  }
+  
+  .selected-meals-list {
+    margin-top: 20px;
+    list-style-type: none;
+  }
+  
+  .selected-meals-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .total-price {
+    font-size: 18px;
+    margin-top: 30px;
+  }
+
+  .selected-meals-list button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }

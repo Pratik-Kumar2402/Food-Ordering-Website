@@ -14,11 +14,11 @@
   
   .cards {
     width: 60%;
-    margin: 20px;
-    border: 1px solid #ccc;
-    border-radius: 15px;
+    margin: 1.5rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 1rem;
     background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.1);
   }
   
   .card1 {
@@ -26,16 +26,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #333;
-    padding: 10px 0;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    background-color: #222;
+    padding: 0.5rem 0;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
   }
   
   .card1-button {
-    margin: 10px;
-    padding: 10px 20px;
-    border-radius: 50px;
+    margin: 0.7rem;
+    padding: 0.7rem 1rem;
+    border-radius: 2rem;
     background-color: #333;
     color: white;
     border: none;
@@ -48,10 +48,13 @@
   }
   
   .card2 {
-    padding: 20px;
+    padding: 1.3rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
   }
   
-  .card2 button{
+  .card2 button, .card2 select{
     border-radius: 10px;
     background-color: #333;
     color: white;
@@ -63,62 +66,94 @@
   .card2-div {  
     display: inline-flex;
     padding: 20px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 0.1rem solid #ccc;
   }
   
   .card2-image {
     max-width: 90%;
     height: auto;
-    border-radius: 15px;
+    border-radius: 1rem;
   }
   
   .card2-details {
-    padding: 10px;
-    width: 130%;
-    line-height: 1.6;
+    padding: 0.7rem;
+    width: 100%;
+    line-height: 1.7;
   }
   
   .selected-price {
-    border: 1px solid #ccc;
+    border: 0.1rem solid #ccc;
     width: 40%;
-    margin: 20px;
-    border-radius: 15px;
+    margin: 1.5rem;
+    border-radius: 1rem;
     background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.1);
+    padding: 1.7rem;
   }
 
   .selected-heading{
     text-align: center;
-    border-radius: 10px;
+    border-radius: 0.7rem;
     color: white;
     background-color: #333;
-    padding: 10px 25px;
+    padding: 0.7rem;
   }
   
   .selected-meals-list {
-    margin-top: 20px;
+    margin-top: 1.3rem;
     list-style-type: none;
   }
   
   .selected-meals-list li {
-    margin-bottom: 10px;
+    margin-bottom: 0.7rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   
   .total-price {
-    font-size: 18px;
-    margin-top: 30px;
+    font-size: 1.5rem;
+    margin-top: 2rem;
   }
 
   .selected-meals-list button{
-    padding: 10px 20px;
-    border-radius: 10px;
+    padding: 0.7rem 1.3rem;
+    border-radius: 0.5rem;
     background-color: #333;
     color: white;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
   }
+
+  /* Media query for screens below 700px in width */
+@media screen and (max-width: 700px) {
+  .grid {
+    flex-direction: column;
+  }
+
+  .cards{
+    width: 90%;
+  }
+
+  .card1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card2-div {
+    flex-direction: column;
+  }
+
+  .card2-image {
+    max-width: 100%;
+  }
+
+  .card2-details {
+    width: 100%;
+  }
+
+  .selected-price {
+    width: 81%;
+  }
+}

@@ -3,22 +3,26 @@ import './menuList.css';
 import data from './dataset.json';
 
 export default function Menu() {
+  // Define states using the useState hook
   const [items, setItems] = useState(data);
   const [selectedLabel, setSelectedLabel] = useState(null);
-  const [selectedMeals, setSelectedMeals] = useState([]); // State to store selected meals
-  const [totalPrice, setTotalPrice] = useState(0); // State to store the total price
+  const [selectedMeals, setSelectedMeals] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
 
+  // Function to filter the list of meals based on the selected label
   const filterList = (list) => {
     if (list === 'all') {
       setItems(data);
       setSelectedLabel(null);
     } else {
+      // Filter the list based on the selected label
       const updatedList = data.meals.filter((element) => element.labels.includes(list));
       setItems({ ...data, meals: updatedList });
       setSelectedLabel(list);
     }
   };
 
+  // Function to handle the selection of a meal
   const handleSelectMeal = (mealName, mealPrice, selectedDrinkTitle) => {
     // Calculate the total meal price including the meal and selected drink (if available)
     const mealPriceFloat = parseFloat(mealPrice);
@@ -32,7 +36,6 @@ export default function Menu() {
 
     const totalMealPrice = mealPriceFloat + selectedDrinkPrice;
 
-    // Update the total price by adding the total meal price
     setTotalPrice((prevTotal) => parseFloat((prevTotal + totalMealPrice).toFixed(3)));
 
     // Add the selected meal to the list of selected meals with the drink title (if available)
@@ -41,7 +44,7 @@ export default function Menu() {
       {
         name: mealName,
         price: totalMealPrice,
-        selectedDrink: selectedDrinkTitle || 'No Drink Selected', // Use 'No Drink Selected' if no drink is selected
+        selectedDrink: selectedDrinkTitle || 'No Drink Selected',
       },
     ]);
 
@@ -51,16 +54,16 @@ export default function Menu() {
     setItems(updatedItems);
   };
 
+  // Function to handle the deletion of a selected meal
   const handleDeleteMeal = (index, mealPrice) => {
-    // Remove the selected meal at the specified index
     const updatedMeals = [...selectedMeals];
     updatedMeals.splice(index, 1);
     setSelectedMeals(updatedMeals);
 
-    // Update the total price by subtracting the meal price
     setTotalPrice((prevTotal) => parseFloat((prevTotal - mealPrice).toFixed(3)));
   };
 
+  // useEffect to reset the items list when "All" is selected
   useEffect(() => {
     if (selectedLabel === null) {
       setItems(data);
@@ -69,7 +72,7 @@ export default function Menu() {
 
   return (
     <div>
-      <h2 style={{ textAlign: 'center', padding: '20px' }}>Shopping List</h2>
+      <h2 style={{ textAlign: 'center', padding: '20px' }}>Have A Nice Day With A Perfect Meal For You</h2>
       <hr />
       <div className='grid'>
         <div className='cards'>
@@ -80,6 +83,7 @@ export default function Menu() {
             >
               All
             </button>
+            {/* Buttons to filter items based on labels */}
             {data.labels.map((item) => (
               <button
                 key={item.id}

@@ -50,7 +50,7 @@
   .card2 {
     padding: 20px;
   }
-
+  
   .card2 button{
     border-radius: 10px;
     background-color: #333;
@@ -60,7 +60,7 @@
     transition: background-color 0.3s, color 0.3s;
   }
   
-  .card2-div {
+  .card2-div {  
     display: inline-flex;
     padding: 20px;
     border-bottom: 1px solid #ccc;
